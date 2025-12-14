@@ -101,7 +101,7 @@ if uploaded_file is not None:
         items_text = ", ".join([f"{lang}: {qty}" for lang, qty in lang_quantities.items()])
 
         text = (
-            f"<b>DELIVERY TO:</b><br/>"
+            f"<b>TO:</b><br/>"
             f"{shipping_name}<br/>"
             f"{street}<br/>"
             f"{city}, {province} {zip_code}<br/>"
@@ -155,6 +155,7 @@ if uploaded_file is not None:
         file_name="shipping_labels.pdf",
         mime="application/pdf",
     )
+
 
 
 

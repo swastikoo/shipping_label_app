@@ -102,7 +102,7 @@ if uploaded_file is not None:
 
         text = (
             f"<font name= 'Helvetica-Bold'>TO:</font><br/>"
-            f"<font name= 'Helvetica-Bold'>{shipping_name}</font><br/>"
+            f"<font name= 'Helvetica-Bold'>totik</font><br/>"
             f"{street}<br/>"
             f"{city}, {province} {zip_code}<br/>"
             f"{phone}<br/>"
@@ -155,6 +155,7 @@ if uploaded_file is not None:
         file_name="shipping_labels.pdf",
         mime="application/pdf",
     )
+
 
 
 

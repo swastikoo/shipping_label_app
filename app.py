@@ -118,13 +118,17 @@ if uploaded_file is not None:
         padding = 2 * mm
         max_width = label_width - 2 * padding
         max_height = label_height - 2 * padding
-        current_font_size = 10
+
+        BASE_FONT_SIZE = 13
+        MIN_FONT_SIZE = 8
+        
+        current_font_size = BASE_FONT_SIZE
         style.fontSize = current_font_size
-        style.leading = current_font_size + 2
+        style.leading = current_font_size + 3
 
         para = Paragraph(text, style)
         w, h = para.wrap(max_width, max_height)
-        while h > max_height and current_font_size > 5:
+        while h > max_height and current_font_size > MIN_FONT_SIZE:
             current_font_size -= 1
             style.fontSize = current_font_size
             style.leading = current_font_size + 2
@@ -155,6 +159,7 @@ if uploaded_file is not None:
         file_name="shipping_labels.pdf",
         mime="application/pdf",
     )
+
 
 
 

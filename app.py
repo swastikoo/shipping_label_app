@@ -115,11 +115,11 @@ if uploaded_file is not None:
         y = page_height - top_bottom_margin - row_num * (label_height + v_spacing)
 
         # Dynamic font size to fit inside rectangle with inner padding
-        padding = 2 * mm
+        padding = 3 * mm
         max_width = label_width - 2 * padding
         max_height = label_height - 2 * padding
 
-        BASE_FONT_SIZE = 13
+        BASE_FONT_SIZE = 14
         MIN_FONT_SIZE = 8
         
         current_font_size = BASE_FONT_SIZE
@@ -139,7 +139,7 @@ if uploaded_file is not None:
         para.drawOn(c, x + padding, y - h - padding)
 
         # Draw optional rectangle border for testing alignment
-        # c.rect(x, y - label_height, label_width, label_height, stroke=1, fill=0)
+        c.rect(x, y - label_height, label_width, label_height)
 
         # New page every full sheet
         if (i + 1) % (cols * rows) == 0:
@@ -159,6 +159,7 @@ if uploaded_file is not None:
         file_name="shipping_labels.pdf",
         mime="application/pdf",
     )
+
 
 
 

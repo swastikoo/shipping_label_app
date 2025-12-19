@@ -83,7 +83,7 @@ if uploaded_file is not None:
     cols = 2
     rows = 6
     h_spacing = (page_width - 2 * side_margin - cols * label_width) / (cols - 1)
-    v_spacing = (page_height - 2 * top_bottom_margin - rows * label_height) / (rows - 1)
+    ROW_PITCH = 46 * mm  # label height (44) + safe gap (2mm)
 
     # Base style
     styles = getSampleStyleSheet()
@@ -112,7 +112,8 @@ if uploaded_file is not None:
         col = i % cols
         row_num = (i // cols) % rows
         x = side_margin + col * (label_width + h_spacing)
-        y = page_height - top_bottom_margin - row_num * (label_height + v_spacing)
+        y = page_height - top_bottom_margin - row_num * ROW_PITCH
+
 
         # Dynamic font size to fit inside rectangle with inner padding
         padding = 3 * mm
@@ -159,6 +160,7 @@ if uploaded_file is not None:
         file_name="shipping_labels.pdf",
         mime="application/pdf",
     )
+
 
 
 

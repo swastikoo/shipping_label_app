@@ -140,7 +140,7 @@ if uploaded_file is not None:
         para.drawOn(c, x + padding, y - h - padding)
 
         # Draw optional rectangle border for testing alignment
-        c.rect(x, y - label_height, label_width, label_height)
+        # c.rect(x, y - label_height, label_width, label_height)
 
         # New page every full sheet
         if (i + 1) % (cols * rows) == 0:
@@ -160,6 +160,7 @@ if uploaded_file is not None:
         file_name="shipping_labels.pdf",
         mime="application/pdf",
     )
+
 
 
 
